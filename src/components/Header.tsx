@@ -11,7 +11,7 @@ export function Header({ currentPage = 'Home' }: HeaderProps) {
       <div className="flex items-center justify-between gap-4">
         {/* Dashboard Name */}
         <div className="flex items-center text-lg font-bold text-text-primary-light dark:text-text-primary-dark">
-          Global Spare Parts Market
+          Airlines Spare Parts Market
         </div>
 
         {/* Right Icons */}
