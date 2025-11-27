@@ -1367,7 +1367,8 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
         className="mb-8 text-center"
       >
         <h1 className="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark mb-3">
-          Global, Asia Pacific and India Commercial Airlines Spare Parts Market
+          <span className="block">Global, Asia Pacific and India</span>
+          <span className="block">Commercial Airlines Spare Parts Market Database</span>
         </h1>
         <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark">
           Customer Intelligence Database for Aviation Industry

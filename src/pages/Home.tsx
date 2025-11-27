@@ -58,7 +58,8 @@ export function Home({ onNavigate }: HomeProps) {
         className="mb-10 text-center"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-text-primary-light dark:text-text-primary-dark mb-2">
-         Global, Asia Pacific and India Commercial Airlines Spare Parts Market
+          <span className="block">Global, Asia Pacific and India</span>
+          <span className="block">Commercial Airlines Spare Parts Market Database</span>
         </h1>
         <p className="text-lg text-electric-blue dark:text-cyan-accent">
           Customer Intelligence Database
