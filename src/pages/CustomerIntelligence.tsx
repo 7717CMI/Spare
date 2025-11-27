@@ -1435,14 +1435,14 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
               const typeCounts: { [key: string]: number } = {}
               data.forEach(d => {
                 const type = d.customerType || 'Unknown'
-                // Shorten the customer type names for display
-                let shortType = type
-                if (type.includes('Airline Operators')) shortType = 'Airlines'
-                else if (type.includes('MRO Service')) shortType = 'MRO'
-                else if (type.includes('Component Repair')) shortType = 'Component Shops'
-                else if (type.includes('Aircraft Leasing')) shortType = 'Leasing'
-                else if (type.includes('Line Maintenance')) shortType = 'Ground Handling'
-                typeCounts[shortType] = (typeCounts[shortType] || 0) + 1
+                // Use full customer type names for display
+                let fullType = type
+                if (type.includes('Airline Operators')) fullType = 'Airline Operators'
+                else if (type.includes('MRO Service')) fullType = 'MRO Service Providers'
+                else if (type.includes('Component Repair')) fullType = 'Component Repair Shops'
+                else if (type.includes('Aircraft Leasing')) fullType = 'Aircraft Leasing Companies'
+                else if (type.includes('Line Maintenance')) fullType = 'Line Maintenance & Ground Handling'
+                typeCounts[fullType] = (typeCounts[fullType] || 0) + 1
               })
               return Object.entries(typeCounts).map(([type, count]) => ({
                 type,
@@ -1450,7 +1450,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
               }))
             })()}>
               <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#374151' : '#e5e7eb'} />
-              <XAxis dataKey="type" stroke={isDark ? '#9ca3af' : '#6b7280'} angle={-20} textAnchor="end" height={80} fontSize={10} />
+              <XAxis dataKey="type" stroke={isDark ? '#9ca3af' : '#6b7280'} angle={-25} textAnchor="end" height={100} fontSize={9} interval={0} />
               <YAxis stroke={isDark ? '#9ca3af' : '#6b7280'} />
               <Tooltip
                 contentStyle={{
@@ -1582,7 +1582,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     <th colSpan={6} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-purple-200 text-gray-900' : 'bg-purple-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                       Procurement & Purchasing Details
                     </th>
-                    <th colSpan={4} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-pink-200 text-gray-900' : 'bg-pink-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
+                    <th colSpan={3} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-pink-200 text-gray-900' : 'bg-pink-100 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                       Growth & Expansion Plans (If any)
                     </th>
                     <th colSpan={2} className={`px-3 py-3 text-center font-bold ${isDark ? 'bg-green-200 text-gray-900' : 'bg-green-100 text-gray-900'}`}>
@@ -1762,7 +1762,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-purple-100 text-gray-900' : 'bg-purple-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ width: '120px', maxWidth: '120px', whiteSpace: 'normal', lineHeight: '1.4', wordWrap: 'break-word' }}>
                       Preferred Payment Terms
                     </th>
-                    {/* Growth & Expansion Plans - 4 columns */}
+                    {/* Growth & Expansion Plans - 3 columns */}
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-pink-100 text-gray-900' : 'bg-pink-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ width: '120px', maxWidth: '120px', whiteSpace: 'normal', lineHeight: '1.4', wordWrap: 'break-word' }}>
                       New Airlines Acquisition for Spare Parts Service
                     </th>
@@ -1774,7 +1774,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                     </th>
                     {/* CMI Insights - 2 columns */}
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'} border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`} style={{ width: '140px', maxWidth: '140px', whiteSpace: 'normal', lineHeight: '1.4', wordWrap: 'break-word' }}>
-                      Customer Benchmarking Summary (Potential Customers/Bank)
+                      Customer Benchmarking Summary (Potential Customers)
                     </th>
                     <th className={`px-3 py-3 text-center font-semibold ${isDark ? 'bg-green-100 text-gray-900' : 'bg-green-50 text-gray-900'}`} style={{ width: '140px', maxWidth: '140px', whiteSpace: 'normal', lineHeight: '1.4', wordWrap: 'break-word' }}>
                       Additional Comments/Notes by CMI Team
@@ -1995,7 +1995,7 @@ export function CustomerIntelligence({ onNavigate }: CustomerIntelligenceProps) 
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                         {row.preferredPaymentTerms || 'NN'}
                       </td>
-                      {/* Growth & Expansion Plans - 4 columns */}
+                      {/* Growth & Expansion Plans - 3 columns */}
                       <td className={`px-3 py-3 text-text-secondary-light dark:text-text-secondary-dark border-r ${isDark ? 'border-gray-400' : 'border-gray-300'}`}>
                         {row.newAirlinesAcquisition || 'NN'}
                       </td>

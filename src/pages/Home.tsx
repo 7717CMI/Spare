@@ -18,7 +18,7 @@ export function Home({ onNavigate }: HomeProps) {
   const analysisTiles: AnalysisTile[] = [
     {
       title: "Customer Intelligence",
-      description: "Customer database and insights for Global IT MSP Airline Industry Database",
+      description: "Customer database and insights for Airlines Spare Parts Market",
       icon: Users,
       id: "CustomerIntelligence",
       gradient: "#0075FF",
